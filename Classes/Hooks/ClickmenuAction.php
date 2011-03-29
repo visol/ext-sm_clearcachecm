@@ -87,8 +87,7 @@ class Tx_SmClearcachecm_Hooks_ClickmenuAction {
 		$nodeUids = array();
 		$childNodeUids = array();
 
-			// FIXME $GLOBALS['BE'] is always empty
-		$nodeLimit = ($GLOBALS['BE']['pageTree']['preloadLimit']) ? $GLOBALS['BE']['pageTree']['preloadLimit'] : 999;
+		$nodeLimit = ($GLOBALS['TYPO3_CONF_VARS']['BE']['pageTree']['preloadLimit']) ? $GLOBALS['TYPO3_CONF_VARS']['BE']['pageTree']['preloadLimit'] : 999;
 
 			/* @var $node t3lib_tree_pagetree_Node */
 		$node = t3lib_div::makeInstance('t3lib_tree_pagetree_Node', (array) $nodeData);

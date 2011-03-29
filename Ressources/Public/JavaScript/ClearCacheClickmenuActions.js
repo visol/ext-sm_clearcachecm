@@ -5,7 +5,7 @@ Ext.onReady(function() {
 				node.attributes.nodeData,
 				function(response) {
 					if (response) {
-						Ext.MessageBox.alert('Clear page cache', response);
+						TYPO3.Flashmessage.display(TYPO3.Severity.information, TYPO3.lang.sm_clearcachecm_clearPageCache, response, 5);
 					}
 				},
 				this
@@ -18,7 +18,7 @@ Ext.onReady(function() {
 				node.attributes.nodeData,
 				function(response) {
 					if (response) {
-						Ext.MessageBox.alert('Clear branch cache', response);
+						TYPO3.Flashmessage.display(TYPO3.Severity.information, TYPO3.lang.sm_clearcachecm_clearBranchCache, response, 5);
 					}
 				},
 				this
