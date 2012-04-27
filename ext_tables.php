@@ -9,8 +9,13 @@ if (TYPO3_MODE == 'BE')	{
 		// @see: t3lib_contextmenu_pagetree_DataProvider
 		// @see: get BE user settings from userTS: http://doxygen.frozenkiwi.com/typo3/html/de/d51/class_8clearcachemenu_8php_source.html
 	
-		// Add item actions 
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ExtDirect']['TYPO3.SmClearcachecm.ClickmenuAction'] = 'typo3conf/ext/sm_clearcachecm/Classes/Hooks/ClickmenuAction.php:Tx_SmClearcachecm_Hooks_ClickmenuAction';
+		// register Ext.Direct provider
+	$extPath = t3lib_extMgm::extPath($_EXTKEY);
+	t3lib_extMgm::registerExtDirectComponent(
+		'TYPO3.SmClearcachecm.ClickmenuAction',
+		$extPath . 'Classes/Hooks/ClickmenuAction.php:Tx_SmClearcachecm_Hooks_ClickmenuAction'
+	);
+
 		// Include JS in backend 
 	$GLOBALS['TYPO3_CONF_VARS']['typo3/backend.php']['additionalBackendItems'][] = t3lib_extMgm::extPath($_EXTKEY, 'Ressources/Private/Php/RegisterJavaScriptForPagetreeAction.php');
 
