@@ -9,8 +9,10 @@
 		<languageKey index="default" type="array">
 			<label index="clearBranchCache">Clear branch cache</label>
 			<label index="clearBranchCacheError">Clearing the page cache of the branch failed.</label>
+			<label index="clearBranchCacheSuccess">Clearing the page cache of the branch succeeded!</label>
 			<label index="clearPageCache">Clear page cache</label>
 			<label index="clearPageCacheError">Clearing the page cache failed.</label>
+			<label index="clearPageCacheSuccess">Clearing the page cache succeeded.</label>
 		</languageKey>
 		<languageKey index="ar"></languageKey>
 		<languageKey index="bs"></languageKey>
@@ -22,8 +24,10 @@
 		<languageKey index="de" type="array">
 			<label index="clearBranchCache">Cache des Teilbereichs leeren</label>
 			<label index="clearBranchCacheError">Das Leeren des Caches für den Teilbereich ist fehlgeschlagen.</label>
+			<label index="clearBranchCacheSuccess">Das Leeren des Caches für den Teilbereich war erfolgreich.</label>
 			<label index="clearPageCache">Cache der Seite leeren</label>
 			<label index="clearPageCacheError">Das Leeren des Caches für die Seite ist fehlgeschlagen.</label>
+			<label index="clearPageCacheSuccess">Das Leeren des Caches für die Seite war erfolgreich.</label>
 		</languageKey>
 		<languageKey index="el"></languageKey>
 		<languageKey index="eo"></languageKey>

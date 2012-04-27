@@ -12,12 +12,12 @@ if (is_object($TYPO3backend)) {
 
 	$langPath = 'LLL:EXT:sm_clearcachecm/Ressources/Private/Language/locallang_cm.xml:';
 	$pageRenderer->addInlineLanguageLabel(
-		'sm_clearcachecm_clearPageCache',
-		$GLOBALS['LANG']->sL($langPath . 'clearPageCache', TRUE)
+		'sm_clearcachecm_clearPageCacheSuccess',
+		$GLOBALS['LANG']->sL($langPath . 'clearPageCacheSuccess', TRUE)
 	);
 	$pageRenderer->addInlineLanguageLabel(
-		'sm_clearcachecm_clearBranchCache',
-		$GLOBALS['LANG']->sL($langPath . 'clearBranchCache', TRUE)
+		'sm_clearcachecm_clearBranchCacheSuccess',
+		$GLOBALS['LANG']->sL($langPath . 'clearBranchCacheSuccess', TRUE)
 	);
 }
 
