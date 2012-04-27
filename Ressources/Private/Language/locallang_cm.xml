@@ -3,13 +3,69 @@
 	<meta type="array">
 		<description>Labels for the clickmenu items of the extension 'sm_clearcachecm'</description>
 		<type>module</type>
+		<generator>LFEditor</generator>
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
-			<label index="clearPageCache">Clear page cache</label>
 			<label index="clearBranchCache">Clear branch cache</label>
-			<label index="clearPageCacheError">Clearing the page cache failed.</label>
 			<label index="clearBranchCacheError">Clearing the page cache of the branch failed.</label>
+			<label index="clearPageCache">Clear page cache</label>
+			<label index="clearPageCacheError">Clearing the page cache failed.</label>
 		</languageKey>
+		<languageKey index="ar"></languageKey>
+		<languageKey index="bs"></languageKey>
+		<languageKey index="bg"></languageKey>
+		<languageKey index="ca"></languageKey>
+		<languageKey index="ch"></languageKey>
+		<languageKey index="cs"></languageKey>
+		<languageKey index="da"></languageKey>
+		<languageKey index="de" type="array">
+			<label index="clearBranchCache">Cache des Teilbereichs leeren</label>
+			<label index="clearBranchCacheError">Das Leeren des Caches für den Teilbereich ist fehlgeschlagen.</label>
+			<label index="clearPageCache">Cache der Seite leeren</label>
+			<label index="clearPageCacheError">Das Leeren des Caches für die Seite ist fehlgeschlagen.</label>
+		</languageKey>
+		<languageKey index="el"></languageKey>
+		<languageKey index="eo"></languageKey>
+		<languageKey index="es"></languageKey>
+		<languageKey index="et"></languageKey>
+		<languageKey index="eu"></languageKey>
+		<languageKey index="fa"></languageKey>
+		<languageKey index="fi"></languageKey>
+		<languageKey index="fo"></languageKey>
+		<languageKey index="fr"></languageKey>
+		<languageKey index="fr_CA"></languageKey>
+		<languageKey index="gl"></languageKey>
+		<languageKey index="he"></languageKey>
+		<languageKey index="hi"></languageKey>
+		<languageKey index="hr"></languageKey>
+		<languageKey index="hu"></languageKey>
+		<languageKey index="is"></languageKey>
+		<languageKey index="it"></languageKey>
+		<languageKey index="ja"></languageKey>
+		<languageKey index="ka"></languageKey>
+		<languageKey index="kl"></languageKey>
+		<languageKey index="km"></languageKey>
+		<languageKey index="ko"></languageKey>
+		<languageKey index="lt"></languageKey>
+		<languageKey index="lv"></languageKey>
+		<languageKey index="ms"></languageKey>
+		<languageKey index="nl"></languageKey>
+		<languageKey index="no"></languageKey>
+		<languageKey index="pl"></languageKey>
+		<languageKey index="pt"></languageKey>
+		<languageKey index="pt_BR"></languageKey>
+		<languageKey index="ro"></languageKey>
+		<languageKey index="ru"></languageKey>
+		<languageKey index="sk"></languageKey>
+		<languageKey index="sl"></languageKey>
+		<languageKey index="sq"></languageKey>
+		<languageKey index="sr"></languageKey>
+		<languageKey index="sv"></languageKey>
+		<languageKey index="th"></languageKey>
+		<languageKey index="tr"></languageKey>
+		<languageKey index="uk"></languageKey>
+		<languageKey index="vi"></languageKey>
+		<languageKey index="zh"></languageKey>
 	</data>
 </T3locallang>
