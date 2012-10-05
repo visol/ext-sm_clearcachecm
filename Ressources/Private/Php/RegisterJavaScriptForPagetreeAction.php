@@ -5,7 +5,6 @@ if (!defined('TYPO3_MODE')) {
 	// Adds JavaScript and LLL for clickmenu to the BE
 if (is_object($TYPO3backend)) {
 	$pageRenderer = $GLOBALS['TBE_TEMPLATE']->getPageRenderer();
-	$pageRenderer->addJsFile('ajax.php?ajaxID=ExtDirect::getAPI&namespace=TYPO3.Smclearcachecm&' . TYPO3_version, NULL, FALSE);
 
 	$jsPath = t3lib_extMgm::extRelPath('sm_clearcachecm') . 'Ressources/Public/JavaScript/';
 	$pageRenderer->addJsFile($jsPath . 'ClearCacheClickmenuActions.js');
