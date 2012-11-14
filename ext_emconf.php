@@ -3,7 +3,7 @@
 ########################################################################
 # Extension Manager/Repository config file for ext "sm_clearcachecm".
 #
-# Auto generated 27-04-2012 16:30
+# Auto generated 14-11-2012 01:05
 #
 # Manual updates:
 # Only the data in the array - everything else is removed by next
@@ -41,7 +41,9 @@ $EM_CONF[$_EXTKEY] = array(
 		'suggests' => array(
 		),
 	),
-	'_md5_values_when_last_written' => 'a:9:{s:9:"ChangeLog";s:4:"1924";s:10:"README.txt";s:4:"ee2d";s:12:"ext_icon.gif";s:4:"7bff";s:14:"ext_tables.php";s:4:"cea3";s:33:"Classes/Hooks/ClickmenuAction.php";s:4:"788a";s:44:"Ressources/Private/Language/locallang_cm.xml";s:4:"fa07";s:62:"Ressources/Private/Php/RegisterJavaScriptForPagetreeAction.php";s:4:"1eac";s:58:"Ressources/Public/JavaScript/ClearCacheClickmenuActions.js";s:4:"a2a6";s:14:"doc/manual.sxw";s:4:"cbfa";}',
+	'_md5_values_when_last_written' => 'a:9:{s:9:"ChangeLog";s:4:"1924";s:12:"ext_icon.gif";s:4:"7bff";s:14:"ext_tables.php";s:4:"cea3";s:10:"README.txt";s:4:"ee2d";s:33:"Classes/Hooks/ClickmenuAction.php";s:4:"788a";s:44:"Ressources/Private/Language/locallang_cm.xml";s:4:"fa07";s:62:"Ressources/Private/Php/RegisterJavaScriptForPagetreeAction.php";s:4:"10ca";s:58:"Ressources/Public/JavaScript/ClearCacheClickmenuActions.js";s:4:"a2a6";s:14:"doc/manual.sxw";s:4:"cbfa";}',
+	'suggests' => array(
+	),
 );
 
 ?>
