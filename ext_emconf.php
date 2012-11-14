@@ -3,7 +3,7 @@
 ########################################################################
 # Extension Manager/Repository config file for ext "sm_clearcachecm".
 #
-# Auto generated 14-11-2012 01:05
+# Auto generated 14-11-2012 01:12
 #
 # Manual updates:
 # Only the data in the array - everything else is removed by next
@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => 'Adds items to the pagetree clickmenu to clear the cache of pages. Either clears cache of a single page or a whole branch. Two clicks are enough! Needs TYPO3 4.5 or later.',
 	'category' => 'be',
 	'shy' => 0,
-	'version' => '2.2.0',
+	'version' => '2.2.1',
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',
