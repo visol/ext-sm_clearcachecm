@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => 'Adds items to the pagetree clickmenu to clear the cache of pages. Either clears cache of a single page or a whole branch. Two clicks are enough! Needs TYPO3 4.5 or later.',
 	'category' => 'be',
 	'shy' => 0,
-	'version' => '2.2.2',
+	'version' => '2.2.3',
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',
@@ -34,7 +34,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'CGLcompliance_note' => '',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '4.5.0-6.1.99',
+			'typo3' => '4.5.0-6.2.99',
 		),
 		'conflicts' => array(
 		),
