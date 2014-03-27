@@ -29,7 +29,7 @@ if (TYPO3_MODE == 'BE')	{
 				1020 {
 					name = clearPageCache
 					label = LLL:EXT:sm_clearcachecm/Ressources/Private/Language/locallang_cm:clearPageCache
-					spriteIcon = actions-system-cache-clear
+					spriteIcon = actions-system-cache-clear-impact-low
 					callbackAction = clearPageCache
 				}
 			}
@@ -40,7 +40,7 @@ if (TYPO3_MODE == 'BE')	{
 				420 {
 					name = clearBranchCache
 					label = LLL:EXT:sm_clearcachecm/Ressources/Private/Language/locallang_cm:clearBranchCache
-					spriteIcon = actions-system-cache-clear-impact-medium
+					spriteIcon = actions-system-cache-clear-impact-low
 					callbackAction = clearBranchCache
 				}
 			}

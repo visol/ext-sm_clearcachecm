@@ -7,12 +7,12 @@
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
-			<label index="clearBranchCache">Clear branch cache</label>
-			<label index="clearBranchCacheError">Clearing the page cache of the branch failed.</label>
-			<label index="clearBranchCacheSuccess">Clearing the page cache of the branch succeeded!</label>
-			<label index="clearPageCache">Clear page cache</label>
-			<label index="clearPageCacheError">Clearing the page cache failed.</label>
-			<label index="clearPageCacheSuccess">Clearing the page cache succeeded.</label>
+			<label index="clearBranchCache">Flush branch cache</label>
+			<label index="clearBranchCacheError">Flushing the page cache of the branch failed.</label>
+			<label index="clearBranchCacheSuccess">Flushing the page cache of the branch succeeded!</label>
+			<label index="clearPageCache">Flush page cache</label>
+			<label index="clearPageCacheError">Flushing the page cache failed.</label>
+			<label index="clearPageCacheSuccess">Flushing the page cache succeeded.</label>
 		</languageKey>
 		<languageKey index="ar"></languageKey>
 		<languageKey index="bs"></languageKey>
