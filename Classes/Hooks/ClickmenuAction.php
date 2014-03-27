@@ -1,4 +1,6 @@
 <?php
+namespace T3node\SmClearcachecm\Hooks;
+
 /***************************************************************
 *  Copyright notice
 *
@@ -21,83 +23,61 @@
 *
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
-/**
- * [CLASS/FUNCTION INDEX of SCRIPT]
- *
- *
- *
- *   53: class Tx_SmClearcachecm_Hooks_ClickmenuAction
- *   61:     public function clearPageCache($nodeData)
- *   85:     public function clearBranchCache($nodeData)
- *  123:     protected function transformTreeStructureIntoFlatArray($nodeCollection, $level = 0)
- *  148:     protected function performClearCache($nodeUids = array())
- *
- * TOTAL FUNCTIONS: 4
- * (This index is automatically created/updated by the extension "extdeveval")
- *
- */
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Actions for the clickmenu items
  * 1) to clear page cache of a single page
  * 2) to clear page cache of a whole branch
- * 
+ *
  * The TYPO3 pagetree implementation uses the noun "node" instead of "page".
  * I decided to follow this terminology.
  *
- * @author		Steffen Mueller <typo3@t3node.com>
- * @package		TYPO3
- * @subpackage	tx_smclearcachecm
  */
-class Tx_SmClearcachecm_Hooks_ClickmenuAction {
+class ClickmenuAction {
 
 	/**
 	 * Clear page cache action
-	 * 
-	 * @param	stdClass $nodeData
-	 * @return	string Error message for the BE user
+	 *
+	 * @param array $nodeData
+	 * @return string Error message for the BE user
 	 */
 	public function clearPageCache($nodeData) {
-
-		$nodeUids = array();
-
-			/* @var $node t3lib_tree_pagetree_Node */
-		$node = t3lib_div::makeInstance('t3lib_tree_pagetree_Node', (array) $nodeData);
+			/* @var $node \TYPO3\CMS\Backend\Tree\Pagetree\PagetreeNode */
+		$node = GeneralUtility::makeInstance('TYPO3\\CMS\\Backend\\Tree\\Pagetree\\PagetreeNode', (array) $nodeData);
 
 			// Get uid of page
-		$nodeUids[] = $node->getId();
+		$nodeUids = array(
+			$node->getId()
+		);
 
-			// Clear the page cache of the page
-		$success = $this->performClearCache($nodeUids);
+		// Clear the cache of the page
+		$result = $this->performClearCache($nodeUids);
 
-		if (!$success) {
-			return $GLOBALS['LANG']->sL('LLL:EXT:sm_clearcachecm/Resources/Private/Language/locallang_cm.xml:clearPageCacheError', TRUE);
-		}
+		return $result;
 	}
 
 	/**
 	 * Clear branch cache action
-	 * 
-	 * @param	stdClass $nodeData
-	 * @return	string Error message for the BE user
+	 *
+	 * @param array $nodeData
+	 * @return string Error message for the BE user
 	 */
 	public function clearBranchCache($nodeData) {
-
-		$nodeUids = array();
-		$childNodeUids = array();
-
 		$nodeLimit = ($GLOBALS['TYPO3_CONF_VARS']['BE']['pageTree']['preloadLimit']) ? $GLOBALS['TYPO3_CONF_VARS']['BE']['pageTree']['preloadLimit'] : 999;
 
-			/* @var $node t3lib_tree_pagetree_Node */
-		$node = t3lib_div::makeInstance('t3lib_tree_pagetree_Node', (array) $nodeData);
+			/* @var \TYPO3\CMS\Backend\Tree\Pagetree\PagetreeNode $node */
+		$node = GeneralUtility::makeInstance('TYPO3\\CMS\\Backend\\Tree\\Pagetree\\PagetreeNode', (array) $nodeData);
 
 			// Get uid of actual page
-		$nodeUids[] = $node->getId();
+		$nodeUids = array(
+			$node->getId()
+		);
 
 			// Get uids of subpages
-			/* @var t3lib_tree_pagetree_DataProvider */
-		$dataProvider = t3lib_div::makeInstance('t3lib_tree_pagetree_DataProvider', $nodeLimit);
+			/* @var \TYPO3\CMS\Backend\Tree\Pagetree\DataProvider $dataProvider */
+		$dataProvider = GeneralUtility::makeInstance('TYPO3\\CMS\\Backend\\Tree\\Pagetree\\DataProvider', $nodeLimit);
 		$nodeCollection = $dataProvider->getNodes($node);
 		$childNodeUids = $this->transformTreeStructureIntoFlatArray($nodeCollection);
 
@@ -105,27 +85,25 @@ class Tx_SmClearcachecm_Hooks_ClickmenuAction {
 		$nodeUids = array_merge($nodeUids, $childNodeUids);
 
 			// Clear the page cache of the nodes
-		$success = $this->performClearCache($nodeUids);
+		$result = $this->performClearCache($nodeUids);
 
-		if (!$success) {
-			return $GLOBALS['LANG']->sL('LLL:EXT:sm_clearcachecm/Resources/Private/Language/locallang_cm:clearBranchCacheError', TRUE);
-		}
+		return $result;
 	}
 
 	/**
 	 * Recursively transform the node collection from tree structure into a flat array
-	 * 
-	 * @param	t3lib_tree_NodeCollection $nodeCollection A tree of node
-	 * @param	integer $level Recursion counter, used internaly
-	 * @return	array Node uids of all child nodes
+	 *
+	 * @param \TYPO3\CMS\Backend\Tree\TreeNodeCollection $nodeCollection A tree of node
+	 * @param integer $level Recursion counter, used internaly
+	 * @return array Node uids of all child nodes
 	 */
 	protected function transformTreeStructureIntoFlatArray($nodeCollection, $level = 0) {
-		$nodeUids = array();
-
 		if ($level > 99) {
 			return array();
 		}
 
+		$nodeUids = array();
+		/** @var \TYPO3\CMS\Backend\Tree\TreeNode $childNode */
 		foreach ($nodeCollection as $childNode) {
 			$nodeUids[] = $childNode->getId();
 			if ($childNode->hasChildNodes()) {
@@ -134,36 +112,35 @@ class Tx_SmClearcachecm_Hooks_ClickmenuAction {
 				$nodeUids[] = $childNode->getId();
 			}
 		}
+
 		return $nodeUids;
 	}
 
 	/**
 	 * Perform the cache clearing using tcemain
-	 * 
-	 * @param	array $nodeUids Node uids where the page cache has to be cleared
-	 * @throws	string $nodeUids Error message from TCEmain errorLog
-	 * @return	boolean TRUE, if clearing of cache was successful
+	 *
+	 * @param array $nodeUids Node uids where the page cache has to be cleared
+	 * @return boolean TRUE, if clearing of cache was successful
+	 * @throws string $nodeUids Error message from TCEmain errorLog
 	 */
 	protected function performClearCache($nodeUids = array()) {
-		if (!empty($nodeUids)) {
-				/* @var $tce t3lib_TCEmain */
-			$tce = t3lib_div::makeInstance('t3lib_TCEmain');
-			$tce->stripslashes_values = 0;
-			$tce->start(array(), array());
-			foreach ($nodeUids as $nodeUid) {
-				$tce->clear_cacheCmd($nodeUid);
-			}
+		if (empty($nodeUids)) {
+			return TRUE;
 		}
+
+		/* @var $dataHandler \TYPO3\CMS\Core\DataHandling\DataHandler */
+		$dataHandler = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\DataHandling\\DataHandler');
+		$dataHandler->stripslashes_values = 0;
+		$dataHandler->start(array(), array());
+		foreach ($nodeUids as $nodeUid) {
+			$dataHandler->clear_cacheCmd($nodeUid);
+		}
+
 			// Check for errors
-		if (count($tce->errorLog)) {
-			throw new Exception(implode(chr(10), $tce->errorLog));
+		if (count($dataHandler->errorLog)) {
+			throw new \Exception(implode(chr(10), $dataHandler->errorLog));
 		}
+
 		return TRUE;
 	}
 }
-
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['sm_clearcachecm/Classes/Hooks/ClickmenuAction.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['sm_clearcachecm/Classes/Hooks/ClickmenuAction.php']);
-}
-
-?>

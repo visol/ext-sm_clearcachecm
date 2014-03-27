@@ -4,10 +4,10 @@ Ext.onReady(function() {
 			TYPO3.SmClearcachecm.ClickmenuAction.clearPageCache(
 				node.attributes.nodeData,
 				function(response) {
-					if (response) {
-						TYPO3.Flashmessage.display(TYPO3.Severity.error, '', response);
-					} else {
+					if (response === true) {
 						TYPO3.Flashmessage.display(TYPO3.Severity.ok, '', TYPO3.lang.sm_clearcachecm_clearPageCacheSuccess);
+					} else {
+						TYPO3.Flashmessage.display(TYPO3.Severity.error, '', TYPO3.lang.sm_clearcachecm_clearPageCacheError);
 					}
 				},
 				this
@@ -19,10 +19,10 @@ Ext.onReady(function() {
 			TYPO3.SmClearcachecm.ClickmenuAction.clearBranchCache(
 				node.attributes.nodeData,
 				function(response) {
-					if (response) {
-						TYPO3.Flashmessage.display(TYPO3.Severity.error, '', response);
-					} else {
+					if (response === true) {
 						TYPO3.Flashmessage.display(TYPO3.Severity.ok, '', TYPO3.lang.sm_clearcachecm_clearBranchCacheSuccess);
+					} else {
+						TYPO3.Flashmessage.display(TYPO3.Severity.error, '', TYPO3.lang.sm_clearcachecm_clearBranchCacheError);
 					}
 				},
 				this
