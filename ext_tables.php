@@ -17,7 +17,7 @@ if (TYPO3_MODE == 'BE')	{
 	);
 
 		// Include JS in backend 
-	$GLOBALS['TYPO3_CONF_VARS']['typo3/backend.php']['additionalBackendItems'][] = t3lib_extMgm::extPath($_EXTKEY, 'Ressources/Private/Php/RegisterJavaScriptForPagetreeAction.php');
+	$GLOBALS['TYPO3_CONF_VARS']['typo3/backend.php']['additionalBackendItems'][] = t3lib_extMgm::extPath($_EXTKEY, 'Resources/Private/Php/RegisterJavaScriptForPagetreeAction.php');
 
 		// Add items of the context menu to the default userTS configuration
 	$GLOBALS['TYPO3_CONF_VARS']['BE']['defaultUserTSconfig'] .= '
@@ -28,7 +28,7 @@ if (TYPO3_MODE == 'BE')	{
 				1020 = ITEM
 				1020 {
 					name = clearPageCache
-					label = LLL:EXT:sm_clearcachecm/Ressources/Private/Language/locallang_cm:clearPageCache
+					label = LLL:EXT:sm_clearcachecm/Resources/Private/Language/locallang_cm:clearPageCache
 					spriteIcon = actions-system-cache-clear-impact-low
 					callbackAction = clearPageCache
 				}
@@ -39,7 +39,7 @@ if (TYPO3_MODE == 'BE')	{
 				420 = ITEM
 				420 {
 					name = clearBranchCache
-					label = LLL:EXT:sm_clearcachecm/Ressources/Private/Language/locallang_cm:clearBranchCache
+					label = LLL:EXT:sm_clearcachecm/Resources/Private/Language/locallang_cm:clearBranchCache
 					spriteIcon = actions-system-cache-clear-impact-low
 					callbackAction = clearBranchCache
 				}

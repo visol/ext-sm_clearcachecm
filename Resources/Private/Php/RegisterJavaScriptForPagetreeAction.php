@@ -6,10 +6,10 @@ if (!defined('TYPO3_MODE')) {
 if (is_object($TYPO3backend)) {
 	$pageRenderer = $GLOBALS['TBE_TEMPLATE']->getPageRenderer();
 
-	$jsPath = t3lib_extMgm::extRelPath('sm_clearcachecm') . 'Ressources/Public/JavaScript/';
+	$jsPath = t3lib_extMgm::extRelPath('sm_clearcachecm') . 'Resources/Public/JavaScript/';
 	$pageRenderer->addJsFile($jsPath . 'ClearCacheClickmenuActions.js');
 
-	$langPath = 'LLL:EXT:sm_clearcachecm/Ressources/Private/Language/locallang_cm.xml:';
+	$langPath = 'LLL:EXT:sm_clearcachecm/Resources/Private/Language/locallang_cm.xml:';
 	$pageRenderer->addInlineLanguageLabel(
 		'sm_clearcachecm_clearPageCacheSuccess',
 		$GLOBALS['LANG']->sL($langPath . 'clearPageCacheSuccess', TRUE)

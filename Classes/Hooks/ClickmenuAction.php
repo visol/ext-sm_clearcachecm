@@ -72,7 +72,7 @@ class Tx_SmClearcachecm_Hooks_ClickmenuAction {
 		$success = $this->performClearCache($nodeUids);
 
 		if (!$success) {
-			return $GLOBALS['LANG']->sL('LLL:EXT:sm_clearcachecm/Ressources/Private/Language/locallang_cm.xml:clearPageCacheError', TRUE);
+			return $GLOBALS['LANG']->sL('LLL:EXT:sm_clearcachecm/Resources/Private/Language/locallang_cm.xml:clearPageCacheError', TRUE);
 		}
 	}
 
@@ -108,7 +108,7 @@ class Tx_SmClearcachecm_Hooks_ClickmenuAction {
 		$success = $this->performClearCache($nodeUids);
 
 		if (!$success) {
-			return $GLOBALS['LANG']->sL('LLL:EXT:sm_clearcachecm/Ressources/Private/Language/locallang_cm:clearBranchCacheError', TRUE);
+			return $GLOBALS['LANG']->sL('LLL:EXT:sm_clearcachecm/Resources/Private/Language/locallang_cm:clearBranchCacheError', TRUE);
 		}
 	}
 
