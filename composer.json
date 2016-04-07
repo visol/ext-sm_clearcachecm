@@ -1,0 +1,12 @@
+{
+    "name": "stmllr/sm_clearcachecm",
+    "type": "typo3-cms-extension",
+    "description": "Adds items to the pagetree clickmenu to clear the cache of pages. Either clears cache of a single page or a whole branch. Two clicks are enough!",
+    "homepage": "https://forge.typo3.org/projects/extension-sm_clearcachecm",
+    "license": ["GPL-2.0+"],
+    "keywords": ["TYPO3 CMS", "cache"],
+    "support": {
+        "issues": "https://forge.typo3.org/projects/extension-sm_clearcachecm"
+    },
+    "version": "6.2.0"
+}
